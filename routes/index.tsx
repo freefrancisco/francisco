@@ -13,12 +13,18 @@ export default function Home() {
           height="128"
           alt="the Fresh logo: a sliced lemon dripping with juice"
         />
-        <h1 class="text-4xl font-bold">Welcome to Fresh</h1>
+        <h1 class="text-4xl font-bold">Welcome to Francisco's Fresh Site</h1>
         <p class="my-4">
-          Try updating this message in the
-          <code class="mx-2">./routes/index.tsx</code> file, and refresh.
+          This is where I am going to put information about me and blog posts. 
         </p>
+        Counter island for the hell of it
         <Counter count={count} />
+        <div>
+          <h3>
+            <a href ="/posts"> Go See My Blog Posts Here </a>
+        </h3>
+      </div>
+
       </div>
     </div>
   );
