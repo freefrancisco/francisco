@@ -19,49 +19,28 @@ export const handler: Handlers<Post> = {
 
 
 export default function PostPage(props: PageProps<Post>) {
-    const post = props.data;
-    const customCSS = `
-      .markdown-body {
-        color: #333; /* Darker text for better readability */
-        background-color: #f8f8f8; /* Light grey background */
-        border: 1px solid #ddd; /* Light border for the markdown body */
-        padding: 15px; /* Padding around the text */
-        border-radius: 8px; /* Rounded corners */
-      }
-
-      .markdown-body h1, .markdown-body h2 {
-        color: #003366; /* Dark blue for headings */
-      }
-
-      .markdown-body a {
-        color: #1a0dab; /* Classic link blue */
-        text-decoration: none; /* Removes underline */
-      }
-
-      .markdown-body a:hover {
-        text-decoration: underline; /* Underline on hover */
-      }
-    `;
-
-    return (
-      <>
-        <Head>
-          <style dangerouslySetInnerHTML={{ __html: `${CSS}\n${KATEX_CSS}\n${customCSS}` }} />
-        </Head>
-
-        <main class="max-w-screen-md px-4 pt-16 mx-auto">
-          <h1 class="text-5xl font-bold">{post.title}</h1>
-          <time class="text-gray-500">
-            {new Date(post.publishedAt).toLocaleDateString("en-us", {
-              year: "numeric",
-              month: "long",
-              day: "numeric"
-            })}
-          </time>
-          <div class="mt-8 markdown-body"
+  const post = props.data;
+  return (
+    <>
+    <Head>
+      <style dangerouslySetInnerHTML={{ __html: `${CSS}\n${KATEX_CSS}` }} />
+    </Head>
+    <main class="max-w-screen-md px-4 pt-16 mx-auto">
+      <h1 class="text-5xl font-bold">{post.title}</h1>
+      <time class="text-gray-500">
+        {new Date(post.publishedAt).toLocaleDateString("en-us", {
+          year: "numeric",
+          month: "long",
+          day: "numeric"
+        })}
+      </time>
+      <article class="mt-8 prose prose-lg markdown-body">
+      <div 
             dangerouslySetInnerHTML={{ __html: render(post.content, { allowMath: true }) }}
-          />
-        </main>
-      </>
-    );
+      />
+      </article>
+    </main>
+      
+    </>
+  )
 }

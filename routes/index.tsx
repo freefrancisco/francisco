@@ -1,8 +1,4 @@
-import { useSignal } from "@preact/signals";
-import Counter from "../islands/Counter.tsx";
-
 export default function Home() {
-  const count = useSignal(3);
   return (
     <div class="px-4 py-8 mx-auto bg-[#86efac]">
       <div class="max-w-screen-md mx-auto flex flex-col items-center justify-center">
@@ -13,16 +9,16 @@ export default function Home() {
           height="128"
           alt="the Fresh logo: a sliced lemon dripping with juice"
         />
+        <div class="bg-white px-32 py-32">
         <h1 class="text-4xl font-bold">Welcome to Francisco's Site</h1>
-        <ul>
-          <li>
-          <a href="/resume">My Resume</a>
-          </li>
-          <li>
-            <a href="/blog">My Blog</a>
-          </li>
-        </ul>
+        <p>
+          I am playing around with <a href="https://deno.com/"> Deno </a>  
+          and <a href="https://fresh.deno.dev/"> Deno Fresh </a> which are
+          supposed to be the next generation of web development tools,   
+          so I decided to try them out and use them to make a website for myself. 
+        </p>
+        </div>
       </div>
-    </div>
+     </div>
   );
 }
