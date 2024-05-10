@@ -1,5 +1,5 @@
 import { PageProps, Handlers } from "$fresh/server.ts";
-import { getPosts, Post } from "../utils/posts.ts";
+import { getPosts, Post } from "@/utils/posts.ts";
 
 
 export const handler: Handlers<Post[]> = {
@@ -26,7 +26,7 @@ function PostCard(props: { post: Post }) {
     const { post } = props;
     return (
       <div class="py-8 border(t gray-200)">
-        <a class="sm:col-span-2" href={`/${post.slug}`}>
+        <a class="sm:col-span-2" href={`/blog/${post.slug}`}>
           <h3 class="text(3xl gray-900) font-bold">
             {post.title}
           </h3>

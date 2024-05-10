@@ -13,18 +13,15 @@ export default function Home() {
           height="128"
           alt="the Fresh logo: a sliced lemon dripping with juice"
         />
-        <h1 class="text-4xl font-bold">Welcome to Francisco's Fresh Site</h1>
-        <p class="my-4">
-          This is where I am going to put information about me and blog posts. 
-        </p>
-        Counter island for the hell of it
-        <Counter count={count} />
-        <div>
-          <h3>
-            <a href ="/posts"> Go See My Blog Posts Here </a>
-        </h3>
-      </div>
-
+        <h1 class="text-4xl font-bold">Welcome to Francisco's Site</h1>
+        <ul>
+          <li>
+          <a href="/resume">My Resume</a>
+          </li>
+          <li>
+            <a href="/blog">My Blog</a>
+          </li>
+        </ul>
       </div>
     </div>
   );

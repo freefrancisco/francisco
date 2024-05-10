@@ -9,7 +9,9 @@ export default function App({ Component }: PageProps) {
         <link rel="stylesheet" href="/styles.css" />
       </head>
       <body>
+        <div class="px-4 py-8 mx-auto bg-[#86efac]">
         <Component />
+        </div>
       </body>
     </html>
   );
